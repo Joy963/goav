@@ -7,7 +7,7 @@ package avcodec
 //#include <libavcodec/avcodec.h>
 import "C"
 import (
-	"unsafe"
+	//"unsafe"
 )
 
 //Register a bitstream filter.

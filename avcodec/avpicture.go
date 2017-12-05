@@ -7,7 +7,7 @@ package avcodec
 //#include <libavcodec/avcodec.h>
 import "C"
 import (
-	"unsafe"
+	//"unsafe"
 )
 
 //Setup the picture fields based on the specified image parameters and the provided image data buffer.
