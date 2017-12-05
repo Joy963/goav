@@ -161,3 +161,17 @@ func (p *Parser) AvParserNext() *Parser {
 func (p *Parser) AvRegisterCodecParser() {
 	C.av_register_codec_parser((*C.struct_AVCodecParser)(p))
 }
+
+// FromParameters fills the previously initializes CodecContext with the given parameters.
+// C-Function: avcodec_parameters_to_context
+func (ctxt *Context) FromParameters(par *CodecParameters) int {
+	return int(C.avcodec_parameters_to_context((*C.AVCodecContext)(ctxt), (*C.AVCodecParameters)(par)))
+}
+
+// ToParameters returns a CodecParameters instance from a CodecContext
+// C-Function: avcodec_parameters_from_contex
+func (ctxt *Context) ToParameters() (*CodecParameters, int) {
+	par := &CodecParameters{}
+	ret := int(C.avcodec_parameters_from_context((*C.AVCodecParameters)(par), (*C.AVCodecContext)(ctxt)))
+	return par, ret
+}

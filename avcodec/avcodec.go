@@ -54,6 +54,8 @@ type (
 	AvPacketSideDataType          C.enum_AVPacketSideDataType
 	PixelFormat                   C.enum_AVPixelFormat
 	AvSampleFormat                C.enum_AVSampleFormat
+
+	CodecParameters               C.struct_AVCodecParameters
 )
 
 func (c *Codec) AvCodecGetMaxLowres() int {

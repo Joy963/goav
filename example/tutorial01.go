@@ -81,7 +81,6 @@ func main() {
 	codec := s.Codec()
 
 	// Get a pointer to the codec context for the video stream
-	//ctxtSource = ctxtFormat.streams[videoStream].codec
 	ctxtSource = (*avcodec.Context)(unsafe.Pointer(&codec))
 	log.Println("Bit Rate:", ctxtSource.BitRate())
 	log.Println("Channels:", ctxtSource.Channels())
